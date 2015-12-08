@@ -86,6 +86,10 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     config.vm.network :public_network, dev: ENV['HIMLAR_BRIDGE'], mode: 'bridge', auto_config: false
   end
 
+  # NAT rule for openstack dashboard
+  config.vm.network "https", guest: 443, host: 8433
+  config.vm.network "http", guest: 80, host: 8080
+
   # Optional plugins configuration
   if Vagrant.has_plugin?('vagrant-cachier')
     config.cache.scope = :machine
