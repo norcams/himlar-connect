@@ -69,6 +69,7 @@ the user to be able to log in and access their personal project.
 
 ```bash
 git clone git@github.com:norcams/himlar-connect.git
+cd himlar-connect
 vagrant up
 ```
 
