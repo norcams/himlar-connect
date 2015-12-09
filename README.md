@@ -49,6 +49,9 @@ A separate registration service configured as being the same application as
 IaaS through Connect. The registration service is split into a frontend, queue
 and backend. API calls against Openstack is only run by the backend service.
 
+When registering, the backend service creates Openstack objects as needed for
+the user to be able to log in and access their personal project.
+
 ## Integration phase 2
 
 ### Use case summary
