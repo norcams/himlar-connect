@@ -68,7 +68,7 @@ the user to be able to log in and access their personal project.
 ## Using the vagrant based dev env
 
 ```bash
-git clone https://github.com/norcams/himlar-connect
+git clone git@github.com:norcams/himlar-connect.git
 vagrant up
 ```
 
