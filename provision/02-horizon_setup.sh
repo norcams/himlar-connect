@@ -20,3 +20,7 @@ WEBSSO_CHOICES = (
   systemctl restart httpd
 fi
 
+if ! grep -q ^OPENSTACK_KEYSTONE_URL|grep -q 'v2.0'; then
+  echo 'OPENSTACK_KEYSTONE_URL = "http://10.0.3.11:5000/v2.0"' >> /etc/openstack-dashboard/local_settings
+  systemctl restart httpd
+fi
