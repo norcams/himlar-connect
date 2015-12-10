@@ -1,3 +1,9 @@
+keystone_domain { "Connect":
+  ensure       => present,
+  description => "Federated users from FEIDE Connect",
+  is_default  => false,
+}
+
 $keystone_conf = '/etc/keystone/keystone.conf'
 
 ini_setting { 'authmethods':
