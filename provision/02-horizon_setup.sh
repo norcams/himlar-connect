@@ -2,7 +2,8 @@
 
 # Per http://adam.younglogic.com/2015/05/rdo-v3-only/
 # Add identity API v3 settings to Horizon config
-grep -q ^OPENSTACK_API_VERSIONS /etc/openstack-dashboard/local_settings || echo "
+if ! grep -q ^OPENSTACK_API_VERSIONS /etc/openstack-dashboard/local_settings; then
+  echo "
 OPENSTACK_API_VERSIONS = {
      'identity': 3
 }
@@ -16,6 +17,6 @@ WEBSSO_CHOICES = (
       ('oidc', _('Dataporten')),
     )
 " >> /etc/openstack-dashboard/local_settings
-
-systemctl restart httpd
+  systemctl restart httpd
+fi
 

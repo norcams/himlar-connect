@@ -7,14 +7,14 @@ if [[ ! -f /etc/httpd/conf.d/auth_openidc.load ]]; then
   mv /etc/httpd/conf.modules.d/10-auth_openidc.conf /etc/httpd/conf.d/auth_openidc.load
 fi
 
-vhostconf="/etc/httpd/conf.d/10-keystone_wsgi_main.conf"
+vhostfile="/etc/httpd/conf.d/10-keystone_wsgi_main.conf"
 scopes="openid email profile userid-feide"
 redirurl1="http://10.0.3.11:5000/v3/OS-FEDERATION/identity_providers/dataporten/protocols/oidc/auth/redirect"
 redirurl2="http://10.0.3.11:5000/v3/auth/OS-FEDERATION/websso/oidc/redirect"
 oauth_client_id="$(cat /opt/himlar/oauth_client_id)"
 oauth_client_secret="$(cat /opt/himlar/oauth_client_secret)"
 
-if ! grep -q OIDC "${vhostconf}"
+if ! grep -q OIDC "${vhostfile}"
 then
     tmpfile=$(mktemp)
     head -n-1 "${vhostfile}" > "${tmpfile}"
