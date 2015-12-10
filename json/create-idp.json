@@ -1,0 +1,7 @@
+{
+    "identity_provider": {
+        "description": "Dataporten",
+        "remote_ids": ["https://auth.feideconnect.no"],
+        "enabled": true
+    }
+}
