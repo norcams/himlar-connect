@@ -1,4 +1,8 @@
 #!/bin/bash -eux
 
-yum history | grep "Update" || (yum clean all; yum update -y)
+if [[ ! -f /var/tmp/yum_done ]]; then
+  yum clean all
+  yum update -y
+  touch /var/tmp/yum_done
+fi
 
