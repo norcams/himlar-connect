@@ -10,7 +10,7 @@ then
     tmpfile=$(mktemp)
     head -n-1 "${vhostfile}" > "${tmpfile}"
     cat >>"${tmpfile}" <<EOF
-    OIDCClaimPrefix "OIDC"
+    OIDCClaimPrefix "OIDC-"
     OIDCResponseType "code"
     OIDCScope "$scopes"
     OIDCProviderMetadataURL https://auth.feideconnect.no/.well-known/openid-configuration
