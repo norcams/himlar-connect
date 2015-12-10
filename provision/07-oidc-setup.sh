@@ -2,8 +2,8 @@
 
 vhostconf="/etc/httpd/conf.d/10-keystone_wsgi_main.conf"
 scopes="openid email profile userid-feide"
-redirurl1="http://10.0.2.15:5000/v3/OS-FEDERATION/identity_providers/dataporten/protocols/oidc/auth/redirect"
-redirurl2="http://10.0.2.15:5000/v3/auth/OS-FEDERATION/websso/oidc/redirect"
+redirurl1="http://10.0.3.11:5000/v3/OS-FEDERATION/identity_providers/dataporten/protocols/oidc/auth/redirect"
+redirurl2="http://10.0.3.11:5000/v3/auth/OS-FEDERATION/websso/oidc/redirect"
 
 if !grep -q OIDC "${vhostconf}"
 then

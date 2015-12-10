@@ -29,5 +29,5 @@ ini_setting { 'trusted dashboard':
   path    => $keystone_conf,
   section => 'federation',
   setting => 'trusted_dashboard',
-  value   => 'http://10.0.2.15/dashboard/auth/websso/'
+  value   => 'http://10.0.3.11/dashboard/auth/websso/'
 }
