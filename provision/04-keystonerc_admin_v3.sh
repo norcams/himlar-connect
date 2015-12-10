@@ -13,5 +13,7 @@ export OS_REGION_NAME=RegionOne
 export OS_PROJECT_NAME=admin
 export OS_USER_DOMAIN_NAME=Default
 export OS_IDENTITY_API_VERSION=3
+
+alias openstack=/usr/bin/openstack
 " > /root/keystonerc_admin_v3
 
