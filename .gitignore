@@ -3,3 +3,5 @@ nodes.yaml.local
 *~
 *.swp
 /modules/
+oauth_client_id
+oauth_client_secret

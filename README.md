@@ -121,5 +121,22 @@ rpm -ql python-keystone
 
 Keystone is at /usr/lib/python2.7/site-packages/keystone
 
+### To register the dev env Horizon/Keystone in Connect
+
+1) Create two files in the project directory with the OAuth client id and
+   secret from http://dashboard.feideconnect.no
+
+```bash
+echo <my_oauth_client_id> > oauth_client_id
+echo <my_oauth_client_secret> > oauth_client_secret
+```
+
+2) Run vagrant rsync and provision
+
+```bash
+vagrant rsync && vagrant provision
+```
+
+3) Register the application in FEIDE Connect using the values in the output
 
 
