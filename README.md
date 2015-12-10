@@ -2,9 +2,9 @@
 
 Himlar+Connect integration development env
 
-## Goals
+## Definitions
 
-### Openstack definitions
+### Defined by OpenStack
 
 <dl>
 <dt>User</dt>
@@ -19,8 +19,7 @@ Himlar+Connect integration development env
 
 </dl>
 
-UH IaaS definitions
--------------------
+### Defined by UH IaaS
 
 <dl>
 <dt>User</dt>
@@ -34,7 +33,13 @@ UH IaaS definitions
 
 </dl>
 
-## Integration phase 1 (MVP)
+## Milestones
+
+## [Integration phase 1 (MVP)][ghms1]
+
+- Assign tasks using the [github milestone][ghms1]
+
+[ghms1]: https://github.com/norcams/himlar-connect/milestones/Integration%20phase%201
 
 ### Use case summary
 
@@ -52,7 +57,11 @@ and backend. API calls against Openstack is only run by the backend service.
 When registering, the backend service creates Openstack objects as needed for
 the user to be able to log in and access their personal project.
 
-## Integration phase 2
+## [Integration phase 2][ghms2]
+
+- Assign tasks using the [github milestone][ghms2]
+
+[ghms2]: https://github.com/norcams/himlar-connect/milestones/Integration%20phase%202
 
 ### Use case summary
 
