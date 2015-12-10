@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 import ConfigParser
 import requests
+import json
 
 cp = ConfigParser.SafeConfigParser()
 cp.read('/etc/keystone/keystone.conf')
@@ -38,3 +39,25 @@ with open('/opt/himlar/json/create-protocol.json') as fh:
         response = requests.patch(baseurl + '/identity_providers/dataporten/protocols/oidc',
                                   headers=headers, data=data)
     response.raise_for_status()
+
+resp = requests.get('http://localhost:35357/v3/domains', headers=headers)
+domains = resp.json()['domains']
+domain_id = None
+for domain in domains:
+    if domain['name'] == u'Connect':
+        domain_id = domain['id']
+
+if not domain_id:
+    raise Exception('Did not find domain "Connect"')
+
+data = {
+    'group': {
+        'description': 'Gruppe for test med dataporten',
+        'domain_id': domain_id,
+        'name': 'dataporten_group',
+    }
+}
+response = requests.post('http://localhost:35357/v3/groups',
+                         headers=headers, data=json.dumps(data))
+if response.status_code not in (201, 409):
+    raise Exception('Could not create group')
