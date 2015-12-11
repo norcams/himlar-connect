@@ -11,7 +11,7 @@
 			"group": {
 			    "name": "dataporten_group",
 			    "domain": {
-				"id": "default"
+				"id": "CONNECT_DOMAIN_ID"
 			    }
 			}
                     }

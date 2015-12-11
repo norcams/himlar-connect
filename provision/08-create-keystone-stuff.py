@@ -22,8 +22,19 @@ with open('/opt/himlar/json/create-idp.json') as fh:
                                   headers=headers, data=data)
     response.raise_for_status()
 
+resp = requests.get('http://localhost:35357/v3/domains', headers=headers)
+domains = resp.json()['domains']
+domain_id = None
+for domain in domains:
+    if domain['name'] == u'Connect':
+        domain_id = domain['id']
+
+if not domain_id:
+    raise Exception('Did not find domain "Connect"')
+
 with open('/opt/himlar/json/create-mapping.json') as fh:
     data = fh.read()
+    data = data.replace('CONNECT_DOMAIN_ID', domain_id)
     response = requests.put(baseurl + '/mappings/dataporten',
                             headers=headers, data=data)
     if response.status_code == 409:
@@ -39,16 +50,6 @@ with open('/opt/himlar/json/create-protocol.json') as fh:
         response = requests.patch(baseurl + '/identity_providers/dataporten/protocols/oidc',
                                   headers=headers, data=data)
     response.raise_for_status()
-
-resp = requests.get('http://localhost:35357/v3/domains', headers=headers)
-domains = resp.json()['domains']
-domain_id = None
-for domain in domains:
-    if domain['name'] == u'Connect':
-        domain_id = domain['id']
-
-if not domain_id:
-    raise Exception('Did not find domain "Connect"')
 
 data = {
     'group': {
