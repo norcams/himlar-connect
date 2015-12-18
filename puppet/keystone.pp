@@ -4,7 +4,7 @@ keystone_domain { "connect":
   is_default  => false,
 }
 
-keystone_tenant { "demo":
+keystone_tenant { "connect_project":
   ensure      => present,
   description => "FEIDE Connect demo project",
   domain      => "connect",
