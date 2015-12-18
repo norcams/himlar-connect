@@ -5,8 +5,8 @@
                 "local": [
                     {
                         "user": {
-                            "name": "{0}",
-                            "id": "{1}"
+                            "name": "{1}",
+                            "id": "{0}"
                         },
 			"group": {
 			    "name": "dataporten_group",
@@ -18,7 +18,7 @@
                 ],
                 "remote": [
                     {
-                        "type": "OIDC-name"
+                        "type": "OIDC-email"
                     },
                     {
                         "type": "OIDC-sub"
