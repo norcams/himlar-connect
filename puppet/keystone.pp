@@ -1,7 +1,14 @@
-keystone_domain { "Connect":
+keystone_domain { "connect":
   ensure       => present,
   description => "Federated users from FEIDE Connect",
   is_default  => false,
+}
+
+keystone_tenant { "demo":
+  ensure      => present,
+  description => "FEIDE Connect demo project",
+  domain      => "connect",
+  enabled     => True,
 }
 
 $keystone_conf = '/etc/keystone/keystone.conf'

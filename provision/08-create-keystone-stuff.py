@@ -26,11 +26,11 @@ resp = requests.get('http://localhost:35357/v3/domains', headers=headers)
 domains = resp.json()['domains']
 domain_id = None
 for domain in domains:
-    if domain['name'] == u'Connect':
+    if domain['name'] == u'connect':
         domain_id = domain['id']
 
 if not domain_id:
-    raise Exception('Did not find domain "Connect"')
+    raise Exception('Did not find domain "connect"')
 
 with open('/opt/himlar/json/create-mapping.json') as fh:
     data = fh.read()

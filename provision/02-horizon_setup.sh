@@ -11,10 +11,10 @@ OPENSTACK_API_VERSIONS = {
 OPENSTACK_KEYSTONE_DEFAULT_DOMAIN = 'Default'
 
 WEBSSO_ENABLED = True
-
+WEBSSO_INITIAL_CHOICE = 'oidc'
 WEBSSO_CHOICES = (
-      ('credentials', _('Keystone Credentials')),
-      ('oidc', _('Dataporten')),
+      ('oidc', _('FEIDE Connect')),
+      ('credentials', _('Local user')),
     )
 " >> /etc/openstack-dashboard/local_settings
   systemctl restart httpd
