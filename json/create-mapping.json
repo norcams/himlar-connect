@@ -9,7 +9,7 @@
                             "id": "{0}"
                         },
 			"group": {
-			    "name": "dataporten_group",
+			    "name": "{0}-group",
 			    "domain": {
 				"id": "CONNECT_DOMAIN_ID"
 			    }
