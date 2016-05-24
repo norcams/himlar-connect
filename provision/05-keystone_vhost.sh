@@ -22,7 +22,7 @@ then
     OIDCClaimPrefix "OIDC-"
     OIDCResponseType "code"
     OIDCScope "$scopes"
-    OIDCProviderMetadataURL https://auth.feideconnect.no/.well-known/openid-configuration
+    OIDCProviderMetadataURL https://auth.dataporten.no/.well-known/openid-configuration
     OIDCClientID "$oauth_client_id"
     OIDCClientSecret "$oauth_client_secret"
     OIDCCryptoPassphrase openstack

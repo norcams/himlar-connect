@@ -124,7 +124,7 @@ Keystone is at /usr/lib/python2.7/site-packages/keystone
 ### To register the dev env Horizon/Keystone in Connect
 
 1) Create two files in the project directory with the OAuth client id and
-   secret from http://dashboard.feideconnect.no
+   secret from http://dashboard.dataporten.no
 
 ```bash
 echo <my_oauth_client_id> > oauth_client_id
