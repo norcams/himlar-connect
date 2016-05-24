@@ -1,6 +1,6 @@
 #!/bin/bash -eux
 
-rpm -q rdo-release || yum install -y https://www.rdoproject.org/repos/rdo-release.rpm
+rpm -q rdo-release || yum install -y https://repos.fedorapeople.org/repos/openstack/openstack-liberty/rdo-release-liberty-2.noarch.rpm
 rpm -q openstack-packstack || yum install -y openstack-packstack
 
 if [[ ! -f /var/tmp/packstack_done ]]; then
@@ -25,4 +25,3 @@ if [[ ! -f /var/tmp/packstack_done ]]; then
     --use-epel=y \
   && touch /var/tmp/packstack_done
 fi
-
